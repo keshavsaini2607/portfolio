@@ -19,7 +19,7 @@ const Experience = () => {
                     </div>
                     <div className="w-[90%]">
                         <div className='flex flex-col'>
-                            <span className='text-sm font-bold'>{exp.companyName}</span>
+                            <span className='text-[1.1rem] font-bold'>{exp.companyName}</span>
                             <span className='text-sm'>1 year</span>
                         </div>
                         <div className="mt-4 flex flex-col border-b-[1px] border-b- pb-2">

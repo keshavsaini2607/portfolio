@@ -1,10 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import { certifications } from "../../utils/constants";
+import { HiOutlineExternalLink } from "react-icons/hi";
 
 const Certifications = () => {
    return (
-      <div className="w-[100%] shadow-md p-5 mt-10 bg-white rounded-md">
+      <div className="w-[100%] shadow-md p-5 mt-10 bg-white rounded-md" id="certifications">
          <h1 className="font-semibold text-lg mb-4">Certifications</h1>
          {certifications.map((cert) => (
             <div key={cert.id} className="flex space-x-4 mb-5">
@@ -30,9 +31,10 @@ const Certifications = () => {
                   <a
                      href={cert.credUrl}
                      target="blank"
-                     className="px-3 py-1 border-2 border-darkOverlay rounded-full w-max mt-4"
+                     className="px-3 py-1 border-[1px] border-darkOverlay rounded-full w-max mt-4 flex items-center hover:bg-overlay"
                   >
-                     Show Credential
+                     <p className="mr-2"> Show Credential</p>
+                     <HiOutlineExternalLink />
                   </a>
                </div>
             </div>

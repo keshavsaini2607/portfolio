@@ -75,3 +75,13 @@ export const skills = [
    'Sass',
    'Tailwind Css'
 ]
+
+export const searchTabs = [
+   'Profile',
+   'About Me',
+   'Experience',
+   'Education',
+   'Certifications',
+   'Skills',
+   'Languages'
+]

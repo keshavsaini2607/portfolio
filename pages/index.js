@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
-import { useEffect } from "react";
 import AboutMe from "../components/Home/AboutMe";
 import Certifications from "../components/Home/Certifications";
 import Education from "../components/Home/Education";
@@ -10,11 +8,12 @@ import Skills from "../components/Home/Skills";
 import Navbar from "../components/Navbar";
 import ProfileNav from "../components/Navbar/ProfileNav";
 import Sidebar from "../components/Sidebar";
-import { useWindowScroll, useWindowSize } from "../utils/hooks";
+import { useWindowScroll } from "../utils/hooks";
+import Laguages from "../components/Home/Languages";
 
 export default function Home() {
    const windowScroll = useWindowScroll();
-   console.log({ windowScroll });
+
    return (
       <div>
          <Head>
@@ -36,6 +35,7 @@ export default function Home() {
                   <Education />
                   <Certifications />
                   <Skills />
+                  <Laguages />
                </div>
                <div
                   className={`home__right w-[27%] h-[70vh] sticky ${

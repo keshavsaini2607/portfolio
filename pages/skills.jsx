@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Navbar from "../components/Navbar";
@@ -11,7 +12,16 @@ const skills = () => {
          <ProfileNav />
          <div className="w-[70%] bg-white mx-auto p-4 mt-5 rounded-md shadow-sm">
             <div className="flex items-center space-x-3">
-               <Link href="/"><span className="text-2xl cursor-pointer"> {"<"} </span></Link>
+               <Link href="/">
+                  <Image 
+                     src="/assets/back.png"
+                     width="30px"
+                     height="30px"
+                     alt="back"
+                     className="cursor-pointer"
+                  />
+               </Link>
+               
                <h1 className="text-xl font-semibold">Skills</h1>
             </div>
             {skillset.map((skill) => (
