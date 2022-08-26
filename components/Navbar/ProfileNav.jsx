@@ -3,7 +3,7 @@ import React from 'react'
 
 const ProfileNav = () => {
   return (
-    <div className="bg-white shadow-lg sticky top-14 z-10">
+    <div className="bg-white shadow-lg sticky top-12 z-10 md:top-14">
         <div className="w-[75%] mx-auto p-2 flex items-center">
             <div className='flex items-center space-x-3'>
                 <Image 

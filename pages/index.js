@@ -10,9 +10,13 @@ import ProfileNav from "../components/Navbar/ProfileNav";
 import Sidebar from "../components/Sidebar";
 import { useWindowScroll } from "../utils/hooks";
 import Laguages from "../components/Home/Languages";
+import MobileSidebar from '../components/Sidebar/MobileSidebar';
+import { useState } from "react";
+import Layout from "../components/Layout";
 
 export default function Home() {
    const windowScroll = useWindowScroll();
+   const [showMobileSidebar, setShowMobileSidebar] = useState(false);
 
    return (
       <div>
@@ -23,12 +27,13 @@ export default function Home() {
          </Head>
 
          <main>
-            <Navbar />
-            {windowScroll > 600 && (
-               <ProfileNav />
-            )}
-            <div className="main__home w-[75%] mx-auto flex justify-between mt-10">
-               <div className="home__left w-[70%]">
+            <Navbar show={showMobileSidebar} setShow={setShowMobileSidebar} />
+            {windowScroll > 600 && <ProfileNav />}
+            <div className="hidden">
+               <Layout show={showMobileSidebar} setShow={setShowMobileSidebar} />
+            </div>
+            <div className="main__home flex flex-col justify-center items-center mt-10 lg:flex-row lg:justify-between lg:items-start lg:w-[75%] lg:mx-auto">
+               <div className="home__left w-[90%] lg:w-[70%]">
                   <ProfileView />
                   <AboutMe />
                   <Experience />
@@ -38,13 +43,14 @@ export default function Home() {
                   <Laguages />
                </div>
                <div
-                  className={`home__right w-[27%] h-[70vh] sticky ${
+                  className={`hidden home__right w-[27%] h-[70vh] sticky lg:block  ${
                      windowScroll > 35 ? "top-32" : "top-10"
                   }`}
                >
                   <Sidebar />
                </div>
             </div>
+            <MobileSidebar show={showMobileSidebar} setShow={setShowMobileSidebar} />
          </main>
       </div>
    );

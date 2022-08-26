@@ -3,6 +3,7 @@ import React from "react";
 import ProfileImage from "./ProfileImage";
 import { FiMail } from "react-icons/fi";
 import { BiDownload } from "react-icons/bi";
+import Link from "next/link";
 
 const ProfileView = () => {
    return (
@@ -30,16 +31,19 @@ const ProfileView = () => {
             </div>
          </div>
          <div className="cta px-5 mt-4 flex space-x-4">
-            <button className="bg-primary text-white px-4 py-1 rounded-full hover:bg-blue-900 flex items-center">
-               <FiMail />
-               <span className="ml-2 text-md">Ping Me</span>
-            </button>
+            <Link href="/connect">
+               <button className="bg-primary text-white px-4 py-1 rounded-full hover:bg-blue-900 flex items-center text-sm md:text-lg">
+                  <FiMail />
+                  <span className="ml-2 text-md">Ping Me</span>
+               </button>
+            </Link>
 
             <a
                href="https://drive.google.com/uc?export=download&id=1ebEWTqu25iUkX78dD6BkiDYuEU_UK4PH"
                target="blank"
             >
-               <button className="border-2 border-primary text-primary px-4 py-1 rounded-full flex items-center hover:bg-primary hover:text-white">
+               <button className="border-2 border-primary text-primary px-4 py-1 
+               rounded-full flex items-center hover:bg-primary hover:text-white text-xs md:text-lg">
                   <BiDownload />
                   <span className="ml-2 text-md">Download Portfolio</span>
                </button>

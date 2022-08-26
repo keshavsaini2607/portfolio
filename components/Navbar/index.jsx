@@ -7,9 +7,10 @@ import { BsBriefcaseFill } from "react-icons/bs";
 import { useWindowScroll } from "../../utils/hooks";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { searchTabs } from "../../utils/constants";
+import { HiMenuAlt3 } from "react-icons/hi";
 
-const Navbar = () => {
+const Navbar = ({show, setShow}) => {
+   console.log(show)
    const windowScroll = useWindowScroll();
    const router = useRouter();
    const [search, setSearch] = useState("");
@@ -36,7 +37,7 @@ const Navbar = () => {
             windowScroll < 600 && "shadow-md"
          } sticky top-0 z-20 border-b-[1px] border-b-overlay`}
       >
-         <div className="p-2 bg-white w-[75%] mx-auto flex items-center justify-between">
+         <div className="p-2 bg-white mx-auto flex items-center justify-between lg:w-[75%]">
             <div className="flex items-center w-1/2">
                <Image
                   src="/assets/linkedin_icon.png"
@@ -44,17 +45,16 @@ const Navbar = () => {
                   height="35px"
                   alt="main__icon"
                />
-               <div className="bg-overlay flex p-2 rounded-md mx-5 items-center w-[55%] relative">
+               <div className="bg-overlay p-2 rounded-md mx-5 items-center w-[55%] relative hidden md:flex">
                   <GoSearch />
                   <input
                      type="text"
                      placeholder="Search"
                      className="bg-transparent outline-none mx-2"
                   />
-                  
                </div>
             </div>
-            <div>
+            <div className="hidden md:block">
                <ul className="flex space-x-10 text-darkOverlay">
                   <Link href="/">
                      <li
@@ -97,6 +97,9 @@ const Navbar = () => {
                      </li>
                   </Link>
                </ul>
+            </div>
+            <div className="md:hidden" onClick={() => setShow(p => !p)}>
+               <HiMenuAlt3 size="30px" />
             </div>
          </div>
       </nav>
