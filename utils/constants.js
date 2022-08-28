@@ -89,3 +89,13 @@ export const searchTabs = [
    "Skills",
    "Languages",
 ];
+
+export const projects = [
+   {
+      id: "1",
+      title: "Community Dashboard",
+      description: `community to connect and encourage one another, receive answers to critical questions, and develop vibrant communities.`,
+      image: "/assets/p-2.png",
+      link: "https://community-dashboard.vercel.app/"
+   },
+];

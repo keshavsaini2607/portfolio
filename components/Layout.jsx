@@ -2,10 +2,10 @@ import React from 'react'
 import Navbar from './Navbar'
 import ProfileNav from './Navbar/ProfileNav'
 
-const Layout = ({children, show, setShow}) => {
+const Layout = ({children}) => {
   return (
     <div>
-        <Navbar show={show} setShow={setShow} />
+        <Navbar />
         <ProfileNav />
         <>
             {children}
