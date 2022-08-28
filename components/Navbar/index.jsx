@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 const Navbar = () => {
    let Links = [
       { name: "Home", link: "/" },
-      { name: "Connect", link: "/connect", Icon: TiHome },
+      // { name: "Connect", link: "/connect", Icon: TiHome },
       { name: "Projects", link: "/projects" },
       { name: "Experience", link: "/experience" },
    ];
